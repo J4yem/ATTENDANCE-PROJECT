@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.FileWriter;
 
 public class CodebytersAttendance {
     
@@ -17,11 +20,14 @@ public class CodebytersAttendance {
         ArrayList <Integer> BirthYear = new ArrayList<>();
         ArrayList <Long> cellphoneNum = new ArrayList<>();
         ArrayList <String> email = new ArrayList<>();
-        ArrayList <String> elected = new ArrayList<>();
+     //   ArrayList <String> elected = new ArrayList<>();
         
         ArrayList <Integer> month = new ArrayList<>();
         ArrayList <Integer> day = new ArrayList<>();
         ArrayList <Integer> year = new ArrayList<>();
+        
+        private static final String MEMBERS_FILE_NAME = "members.txt";
+        private static final String OFFICERS_FILE_NAME = "viewOfficers.txt";
     
     public static void main(String[] args) {
         
@@ -29,6 +35,7 @@ public class CodebytersAttendance {
         
         Scanner sc = new Scanner(System.in);
         CodebytersAttendance byters = new CodebytersAttendance();
+        
 
         // officers
         
@@ -193,12 +200,9 @@ public class CodebytersAttendance {
         
         System.out.println();
         System.out.print("User Input: ");
-        
-        
-            
+
         input = sc.nextInt();
         sc.nextLine();
-      
         
         if(input == 1){
             byters.officers(sc);
@@ -254,8 +258,6 @@ public class CodebytersAttendance {
                     System.out.println("Please try again.");
                     System.out.println();
                     System.out.println("-------------------------------");}
-        
-    
         
     }
     
@@ -340,6 +342,74 @@ public class CodebytersAttendance {
         System.out.println("Email: " + email.get(5));
         System.out.println(); 
         
+        try {
+            
+            BufferedWriter writer = new BufferedWriter(new FileWriter(OFFICERS_FILE_NAME));
+            
+            writer.write("Position: "+position.get(0) + " \nDay Elected mm/dd/yyyy: " + month.get(0)+"/"+day.get(0)+"/"+year.get(0)+("\n") );
+            writer.write("Fullname: " + firstName.get(0) +" "+middle_initial.get(0)+". "+lastName.get(0)+("\n"));
+            writer.write("ID#: " + memberID.get(0)+"-"+sy.get(0)+("\n"));
+            writer.write("Gender M/F: " + gender.get(0)+("\n"));
+            writer.write("Date of Birth mm/dd/yyyy: " + BirthMonth.get(0)+"/"+BirthDate.get(0)+"/"+BirthYear.get(0)+("\n"));
+            writer.write("Cellphone number: +63" + cellphoneNum.get(0)+("\n"));
+            writer.write("Email: " + email.get(0)+("\n"));
+            
+            writer.newLine();
+            
+            writer.write("Position: "+position.get(1) + " \nDay Elected mm/dd/yyyy: " + month.get(1)+"/"+day.get(1)+"/"+year.get(1)+("\n") );
+            writer.write("Fullname: " + firstName.get(1) +" "+middle_initial.get(1)+". "+lastName.get(1)+("\n"));
+            writer.write("ID#: " + memberID.get(1)+"-"+sy.get(1)+("\n"));
+            writer.write("Gender M/F: " + gender.get(1)+("\n"));
+            writer.write("Date of Birth mm/dd/yyyy: " + BirthMonth.get(1)+"/"+BirthDate.get(1)+"/"+BirthYear.get(1)+("\n"));
+            writer.write("Cellphone number: +63" + cellphoneNum.get(1)+("\n"));
+            writer.write("Email: " + email.get(1)+("\n"));
+            
+            writer.newLine();
+            
+            writer.write("Position: "+position.get(2) + " \nDay Elected mm/dd/yyyy: " + month.get(2)+"/"+day.get(2)+"/"+year.get(2)+("\n") );
+            writer.write("Fullname: " + firstName.get(2) +" "+middle_initial.get(2)+". "+lastName.get(2)+("\n"));
+            writer.write("ID#: " + memberID.get(2)+"-"+sy.get(2)+("\n"));
+            writer.write("Gender M/F: " + gender.get(2)+("\n"));
+            writer.write("Date of Birth mm/dd/yyyy: " + BirthMonth.get(2)+"/"+BirthDate.get(2)+"/"+BirthYear.get(2)+("\n"));
+            writer.write("Cellphone number: +63" + cellphoneNum.get(2)+("\n"));
+            writer.write("Email: " + email.get(2)+("\n"));
+            
+            writer.newLine();
+            
+            writer.write("Position: "+position.get(3) + " \nDay Elected mm/dd/yyyy: " + month.get(3)+"/"+day.get(3)+"/"+year.get(3)+("\n") );
+            writer.write("Fullname: " + firstName.get(3) +" "+middle_initial.get(3)+". "+lastName.get(3)+("\n"));
+            writer.write("ID#: " + memberID.get(3)+"-"+sy.get(3)+("\n"));
+            writer.write("Gender M/F: " + gender.get(3)+("\n"));
+            writer.write("Date of Birth mm/dd/yyyy: " + BirthMonth.get(3)+"/"+BirthDate.get(3)+"/"+BirthYear.get(3)+("\n"));
+            writer.write("Cellphone number: +63" + cellphoneNum.get(3)+("\n"));
+            writer.write("Email: " + email.get(3)+("\n"));
+            
+            writer.newLine();
+            
+            writer.write("Position: "+position.get(4) + " \nDay Elected mm/dd/yyyy: " + month.get(4)+"/"+day.get(4)+"/"+year.get(4)+("\n") );
+            writer.write("Fullname: " + firstName.get(4) +" "+middle_initial.get(4)+". "+lastName.get(4)+("\n"));
+            writer.write("ID#: " + memberID.get(4)+"-"+sy.get(4)+("\n"));
+            writer.write("Gender M/F: " + gender.get(4)+("\n"));
+            writer.write("Date of Birth mm/dd/yyyy: " + BirthMonth.get(4)+"/"+BirthDate.get(4)+"/"+BirthYear.get(4)+("\n"));
+            writer.write("Cellphone number: +63" + cellphoneNum.get(4)+("\n"));
+            writer.write("Email: " + email.get(4)+("\n"));
+            
+            writer.newLine();
+            
+            writer.write("Position: "+position.get(5) + " \nDay Elected mm/dd/yyyy: " + month.get(5)+"/"+day.get(5)+"/"+year.get(5)+("\n") );
+            writer.write("Fullname: " + firstName.get(5) +" "+middle_initial.get(5)+". "+lastName.get(5)+("\n"));
+            writer.write("ID#: " + memberID.get(5)+"-"+sy.get(5)+("\n"));
+            writer.write("Gender M/F: " + gender.get(5)+("\n"));
+            writer.write("Date of Birth mm/dd/yyyy: " + BirthMonth.get(5)+"/"+BirthDate.get(5)+"/"+BirthYear.get(5)+("\n"));
+            writer.write("Cellphone number: +63" + cellphoneNum.get(5)+("\n"));
+            writer.write("Email: " + email.get(5)+("\n"));
+            
+            writer.newLine();
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while showing the officers.");
+            e.printStackTrace();
+        }
     }
     
     public void registrationOfficers(Scanner sc){
@@ -453,19 +523,25 @@ public class CodebytersAttendance {
         System.out.print("First Name: ");
         String firstnamepres = sc.next();
         firstName.set(0,firstnamepres);
+        sc.nextLine();
    
         System.out.print("Last Name: ");
         String lastnamepres = sc.next();
-        lastName.set(0,lastnamepres);
+        lastName.set(0,lastnamepres); 
             
         System.out.print("Middle Initial: ");
-        char initialpres = sc.next().charAt(0);
-        
-        if(initialpres >= 'A' && initialpres <= 'Z'){
-            middle_initial.set(0, initialpres);
+        String input = sc.next();
+
+        if (input.length() == 1) {
+        char initialpres = input.charAt(0);
+
+        if (initialpres >= 'A' && initialpres <= 'Z') {
+        middle_initial.set(0, initialpres);
+         } else {
+        throw new ArithmeticException("Please enter A to Z only.");
         }
-        else{
-             throw new ArithmeticException("Please enter A to Z only.");   
+        } else {
+        throw new ArithmeticException("Please enter only one character.");
         }
         
         System.out.print("Gender M/F: ");
@@ -513,7 +589,7 @@ public class CodebytersAttendance {
         long cellphonenumpres = sc.nextLong();
         sc.nextLine();
         
-        if(cellphonenumpres >= 9000000000L || cellphonenumpres <= 9999999999L){
+        if(cellphonenumpres >= 9000000000L && cellphonenumpres <= 9999999999L){
             cellphoneNum.set(0,cellphonenumpres);
         }
         else{
@@ -624,19 +700,25 @@ public class CodebytersAttendance {
         System.out.print("First Name: ");
         String firstnamevpres = sc.next();
         firstName.set(1,firstnamevpres);
+        sc.nextLine();
    
         System.out.print("Last Name: ");
         String lastnamevpres = sc.next();
         lastName.set(1,lastnamevpres);
             
         System.out.print("Middle Initial: ");
-        char initialvpres = sc.next().charAt(0);
-        
-        if(initialvpres >= 'A' && initialvpres <= 'Z'){
-            middle_initial.set(1, initialvpres);
+        String input = sc.next();
+
+        if (input.length() == 1) {
+        char initialpres = input.charAt(0);
+
+        if (initialpres >= 'A' && initialpres <= 'Z') {
+        middle_initial.set(1, initialpres);
+         } else {
+        throw new ArithmeticException("Please enter A to Z only.");
         }
-        else{
-             throw new ArithmeticException("Please enter A to Z only.");   
+        } else {
+        throw new ArithmeticException("Please enter only one character.");
         }
         
         System.out.print("Gender M/F: ");
@@ -683,7 +765,7 @@ public class CodebytersAttendance {
         long cellphonenumpres = sc.nextLong();
         sc.nextLine();
         
-        if(cellphonenumpres >= 9000000000L || cellphonenumpres <= 9999999999L){
+        if(cellphonenumpres >= 9000000000L && cellphonenumpres <= 9999999999L){
             cellphoneNum.set(1,cellphonenumpres);
         }
         else{
@@ -792,19 +874,25 @@ public class CodebytersAttendance {
         System.out.print("First Name: ");
         String firstnameSEC = sc.next();
         firstName.set(2,firstnameSEC);
+        sc.nextLine();
    
         System.out.print("Last Name: ");
         String lastnameSEC = sc.next();
         lastName.set(2,lastnameSEC);
             
         System.out.print("Middle Initial: ");
-        char initialSEC = sc.next().charAt(0);
-        
-        if(initialSEC >= 'A' && initialSEC <= 'Z'){
-            middle_initial.set(2, initialSEC);
+        String input = sc.next();
+
+        if (input.length() == 1) {
+        char initialpres = input.charAt(0);
+
+        if (initialpres >= 'A' && initialpres <= 'Z') {
+        middle_initial.set(2, initialpres);
+         } else {
+        throw new ArithmeticException("Please enter A to Z only.");
         }
-        else{
-             throw new ArithmeticException("Please enter A to Z only.");   
+        } else {
+        throw new ArithmeticException("Please enter only one character.");
         }
         
         System.out.print("Gender M/F: ");
@@ -851,7 +939,7 @@ public class CodebytersAttendance {
         long cellphonenumpres = sc.nextLong();
         sc.nextLine();
         
-        if(cellphonenumpres >= 9000000000L || cellphonenumpres <= 9999999999L){
+        if(cellphonenumpres >= 9000000000L && cellphonenumpres <= 9999999999L){
             cellphoneNum.set(2,cellphonenumpres);
         }
         else{
@@ -960,19 +1048,25 @@ public class CodebytersAttendance {
         System.out.print("First Name: ");
         String firstnametres = sc.next();
         firstName.set(3,firstnametres);
+        sc.nextLine();
    
         System.out.print("Last Name: ");
         String lastnametres = sc.next();
         lastName.set(3,lastnametres);
             
         System.out.print("Middle Initial: ");
-        char initialtres = sc.next().charAt(0);
-        
-        if(initialtres >= 'A' && initialtres <= 'Z'){
-            middle_initial.set(3, initialtres);
+        String input = sc.next();
+
+        if (input.length() == 1) {
+        char initialpres = input.charAt(0);
+
+        if (initialpres >= 'A' && initialpres <= 'Z') {
+        middle_initial.set(3, initialpres);
+         } else {
+        throw new ArithmeticException("Please enter A to Z only.");
         }
-        else{
-             throw new ArithmeticException("Please enter A to Z only.");   
+        } else {
+        throw new ArithmeticException("Please enter only one character.");
         }
         
         System.out.print("Gender M/F: ");
@@ -1019,7 +1113,7 @@ public class CodebytersAttendance {
         long cellphonenumpres = sc.nextLong();
         sc.nextLine();
         
-        if(cellphonenumpres >= 9000000000L || cellphonenumpres <= 9999999999L){
+        if(cellphonenumpres >= 9000000000L && cellphonenumpres <= 9999999999L){
             cellphoneNum.set(3,cellphonenumpres);
         }
         else{
@@ -1128,19 +1222,25 @@ public class CodebytersAttendance {
         System.out.print("First Name: ");
         String firstnametres = sc.next();
         firstName.set(4,firstnametres);
+        sc.nextLine();
    
         System.out.print("Last Name: ");
         String lastnametres = sc.next();
         lastName.set(4,lastnametres);
             
         System.out.print("Middle Initial: ");
-        char initialtres = sc.next().charAt(0);
-        
-        if(initialtres >= 'A' && initialtres <= 'Z'){
-            middle_initial.set(4, initialtres);
+        String input = sc.next();
+
+        if (input.length() == 1) {
+        char initialpres = input.charAt(0);
+
+        if (initialpres >= 'A' && initialpres <= 'Z') {
+        middle_initial.set(4, initialpres);
+         } else {
+        throw new ArithmeticException("Please enter A to Z only.");
         }
-        else{
-             throw new ArithmeticException("Please enter A to Z only.");   
+        } else {
+        throw new ArithmeticException("Please enter only one character.");
         }
         
         System.out.print("Gender M/F: ");
@@ -1187,7 +1287,7 @@ public class CodebytersAttendance {
         long cellphonenumpres = sc.nextLong();
         sc.nextLine();
         
-        if(cellphonenumpres >= 9000000000L || cellphonenumpres <= 9999999999L){
+        if(cellphonenumpres >= 9000000000L && cellphonenumpres <= 9999999999L){
             cellphoneNum.set(4,cellphonenumpres);
         }
         else{
@@ -1295,19 +1395,25 @@ public class CodebytersAttendance {
         System.out.print("First Name: ");
         String firstnametres = sc.next();
         firstName.set(5,firstnametres);
+        sc.nextLine();
    
         System.out.print("Last Name: ");
         String lastnametres = sc.next();
         lastName.set(5,lastnametres);
             
         System.out.print("Middle Initial: ");
-        char initialtres = sc.next().charAt(0);
-        
-        if(initialtres >= 'A' && initialtres <= 'Z'){
-            middle_initial.set(5, initialtres);
+        String input = sc.next();
+
+        if (input.length() == 1) {
+        char initialpres = input.charAt(0);
+
+        if (initialpres >= 'A' && initialpres <= 'Z') {
+        middle_initial.set(5, initialpres);
+         } else {
+        throw new ArithmeticException("Please enter A to Z only.");
         }
-        else{
-             throw new ArithmeticException("Please enter A to Z only.");   
+        } else {
+        throw new ArithmeticException("Please enter only one character.");
         }
         
         System.out.print("Gender M/F: ");
@@ -1354,7 +1460,7 @@ public class CodebytersAttendance {
         long cellphonenumpres = sc.nextLong();
         sc.nextLine();
         
-        if(cellphonenumpres >= 9000000000L || cellphonenumpres <= 9999999999L){
+        if(cellphonenumpres >= 9000000000L && cellphonenumpres <= 9999999999L){
             cellphoneNum.set(5,cellphonenumpres);
         }
         else{
@@ -1427,7 +1533,6 @@ public class CodebytersAttendance {
         
         else{
             throw new ArithmeticException("Please enter 2000 - 2023 only."); 
-             
         }
             
         System.out.print("First Name: ");
@@ -1439,18 +1544,22 @@ public class CodebytersAttendance {
         lastName.add(lastname1);
             
         System.out.print("Middle Initial: ");
-        char initial = sc.next().charAt(0);
+        String input = sc.next();
 
-        if(initial >= 'A' && initial <= 'Z'){
-            middle_initial.add(initial);
+        if (input.length() == 1) {
+        char initialpres = input.charAt(0);
+
+        if (initialpres >= 'A' && initialpres <= 'Z') {
+        middle_initial.add(initialpres);
+         } else {
+        throw new ArithmeticException("Please enter A to Z only.");
         }
-        else{
-             throw new ArithmeticException("Please enter A to Z only.");   
+        } else {
+        throw new ArithmeticException("Please enter only one character.");
         }
         
         System.out.print("Gender M/F: ");
         char gender1 = sc.next().charAt(0);
-        
         
         if(gender1 == 'M' || gender1 =='F'){
             gender.add(gender1);
@@ -1493,7 +1602,7 @@ public class CodebytersAttendance {
         long cellphonenum = sc.nextLong();
         sc.nextLine();
         
-        if(cellphonenum >= 9000000000L || cellphonenum <= 9999999999L){
+        if(cellphonenum >= 9000000000L && cellphonenum <= 9999999999L){
             cellphoneNum.add(cellphonenum);
         }
         else{
@@ -1517,7 +1626,25 @@ public class CodebytersAttendance {
         System.out.println();
         System.out.println("     REGISTERED AS A MEMBER!");
         System.out.println();  
+        
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter(MEMBERS_FILE_NAME, true));
             
+            writer.write("Fullname: " + firstname1+" "+input+". "+lastname1+("\n"));
+            writer.write("ID#: " + id+"-"+syear+("\n"));
+            writer.write("Gender M/F: " + gender1+("\n"));
+            writer.write("Date of Birth mm/dd/yyyy: " + birthmonth+"/"+birthdate+"/"+birthyear+("\n"));
+            writer.write("Cellphone number: +63" + cellphonenum+("\n"));
+            writer.write("Email: " + Email+("\n"));
+            writer.newLine();
+            writer.close();
+            
+        }
+        catch (IOException e) {
+            System.out.println("An error occurred while showing the members!.");
+            e.printStackTrace();
+        }    
+        
     }
   
     public void informationofOfficers(){
@@ -1655,6 +1782,36 @@ public class CodebytersAttendance {
         System.out.println();
         
     }
+    
+        try {
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(MEMBERS_FILE_NAME, true));
+            
+            writer.write("Fullname: " + firstName.get(6) +" "+middle_initial.get(6)+". "+lastName.get(6)+("\n"));
+            writer.write("ID#: " + memberID.get(6)+"-"+sy.get(6)+("\n"));
+            writer.write("Gender M/F: " + gender.get(6)+("\n"));
+            writer.write("Date of Birth mm/dd/yyyy: " + BirthMonth.get(6)+"/"+BirthDate.get(6)+"/"+BirthYear.get(6)+("\n"));
+            writer.write("Cellphone number: +63" + cellphoneNum.get(6)+("\n"));
+            writer.write("Email: " + email.get(6)+("\n"));
+            
+            writer.newLine();
+            
+            writer.write("Fullname: " + firstName.get(7) +" "+middle_initial.get(7)+". "+lastName.get(7)+("\n"));
+            writer.write("ID#: " + memberID.get(7)+"-"+sy.get(7)+("\n"));
+            writer.write("Gender M/F: " + gender.get(7)+("\n"));
+            writer.write("Date of Birth mm/dd/yyyy: " + BirthMonth.get(7)+"/"+BirthDate.get(7)+"/"+BirthYear.get(7)+("\n"));
+            writer.write("Cellphone number: +63" + cellphoneNum.get(7)+("\n"));
+            writer.write("Email: " + email.get(7)+("\n"));
+            
+            writer.newLine();
+            
+            writer.close();
+        } 
+        catch (IOException e) {
+            System.out.println("An error occurred while showing the members!.");
+            e.printStackTrace();
+        }       
+    
     }
     
     public void userinput(int id, int syear,String firstname1, String lastname1, char initial, char gender1, int birthmonth, int birthdate, int birthyear, long cellphonenum, String Email){
@@ -1694,9 +1851,8 @@ public class CodebytersAttendance {
         System.out.print("Enter School Year: ");
         int syears = sc.nextInt();
         
-        if(syears >= 2000 || syears <= 2023){
-            throw new ArithmeticException("Please enter 2000 - 2023 only."); 
-        }
+        if(syears >= 2000 && syears <= 2023){
+            // throw new ArithmeticException("Please enter 2000 - 2023 only."); 
         
         System.out.println();
         
@@ -1871,6 +2027,24 @@ public class CodebytersAttendance {
                 System.out.println();
                 break;
             }
+            /*if (firstName.size() == 10) {
+            if(memberIDs == (memberID.get(9)) && syears == (sy.get(9))){
+            
+                System.out.println("       ID NUMBER FOUND!");
+                System.out.println();
+                
+                System.out.println("-------------------------------");
+                
+                System.out.println();
+                System.out.println("Fullname: " + firstName.get(9) + " "+middle_initial.get(9)+". "+lastName.get(9));
+                System.out.println("ID#: " +memberID.get(9)+"-"+sy.get(9));
+                System.out.println("Gender M/F: " +gender.get(9));
+                System.out.println("Date of Birth mm/dd/yyyy: " +BirthMonth.get(9)+"/"+BirthDate.get(9)+"/"+BirthYear.get(9));
+                System.out.println("Cellphone number: +63" + cellphoneNum.get(9));
+                System.out.println("Email: " +email.get(9));
+                System.out.println();
+                break;
+            }*/
             else {
                 
                 System.out.println("     ID NUMBER NOT FOUND! "); 
@@ -1893,7 +2067,7 @@ public class CodebytersAttendance {
         throw new ArithmeticException("Please enter 4 digits only."); 
     }
     } 
-
+}
     
 }
 
